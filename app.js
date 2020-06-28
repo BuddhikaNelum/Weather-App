@@ -1,11 +1,12 @@
-console.log('app starting')
+const geocode = require('./utils/geocode')
+const forecast = require('./utils/forecast')
 
-setTimeout(() => {
-    console.log('2 seconds timer')
-}, 2000)
+geocode('galle', (error, data) => {
+    console.log('Error', error)
+    console.log('Data', data)
+})
 
-setTimeout(() => {
-    console.log('0 seconds timer')
-}, 0)
-
-console.log('app stopping')
+forecast(6.0535, 80.2210, 'f', (error, data) => {
+    console.log('Error', error)
+    console.log('Data', data)
+  })
